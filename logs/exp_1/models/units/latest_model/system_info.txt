@@ -1,0 +1,7 @@
+- OS: Darwin-24.2.0-x86_64-i386-64bit Darwin Kernel Version 24.2.0: Fri Dec  6 18:41:43 PST 2024; root:xnu-11215.61.5~2/RELEASE_X86_64
+- Python: 3.7.16
+- Stable-Baselines3: 1.7.0
+- PyTorch: 1.13.1
+- GPU Enabled: False
+- Numpy: 1.21.6
+- Gym: 0.21.0

@@ -1,0 +1,88 @@
+{
+    "policy_class": {
+        ":type:": "<class 'abc.ABCMeta'>",
+        ":serialized:": "gASVOwAAAAAAAACMIXN0YWJsZV9iYXNlbGluZXMzLmNvbW1vbi5wb2xpY2llc5SMEUFjdG9yQ3JpdGljUG9saWN5lJOULg==",
+        "__module__": "stable_baselines3.common.policies",
+        "__doc__": "\n    Policy class for actor-critic algorithms (has both policy and value prediction).\n    Used by A2C, PPO and the likes.\n\n    :param observation_space: Observation space\n    :param action_space: Action space\n    :param lr_schedule: Learning rate schedule (could be constant)\n    :param net_arch: The specification of the policy and value networks.\n    :param activation_fn: Activation function\n    :param ortho_init: Whether to use or not orthogonal initialization\n    :param use_sde: Whether to use State Dependent Exploration or not\n    :param log_std_init: Initial value for the log standard deviation\n    :param full_std: Whether to use (n_features x n_actions) parameters\n        for the std instead of only (n_features,) when using gSDE\n    :param use_expln: Use ``expln()`` function instead of ``exp()`` to ensure\n        a positive standard deviation (cf paper). It allows to keep variance\n        above zero and prevent it from growing too fast. In practice, ``exp()`` is usually enough.\n    :param squash_output: Whether to squash the output using a tanh function,\n        this allows to ensure boundaries when using gSDE.\n    :param features_extractor_class: Features extractor to use.\n    :param features_extractor_kwargs: Keyword arguments\n        to pass to the features extractor.\n    :param share_features_extractor: If True, the features extractor is shared between the policy and value networks.\n    :param normalize_images: Whether to normalize images or not,\n         dividing by 255.0 (True by default)\n    :param optimizer_class: The optimizer to use,\n        ``th.optim.Adam`` by default\n    :param optimizer_kwargs: Additional keyword arguments,\n        excluding the learning rate, to pass to the optimizer\n    ",
+        "__init__": "<function ActorCriticPolicy.__init__ at 0x7fe9bbfbcb90>",
+        "_get_constructor_parameters": "<function ActorCriticPolicy._get_constructor_parameters at 0x7fe9bbfbcc20>",
+        "reset_noise": "<function ActorCriticPolicy.reset_noise at 0x7fe9bbfbccb0>",
+        "_build_mlp_extractor": "<function ActorCriticPolicy._build_mlp_extractor at 0x7fe9bbfbcd40>",
+        "_build": "<function ActorCriticPolicy._build at 0x7fe9bbfbcdd0>",
+        "forward": "<function ActorCriticPolicy.forward at 0x7fe9bbfbce60>",
+        "extract_features": "<function ActorCriticPolicy.extract_features at 0x7fe9bbfbcef0>",
+        "_get_action_dist_from_latent": "<function ActorCriticPolicy._get_action_dist_from_latent at 0x7fe9bbfbcf80>",
+        "_predict": "<function ActorCriticPolicy._predict at 0x7fe9bbfc0050>",
+        "evaluate_actions": "<function ActorCriticPolicy.evaluate_actions at 0x7fe9bbfc00e0>",
+        "get_distribution": "<function ActorCriticPolicy.get_distribution at 0x7fe9bbfc0170>",
+        "predict_values": "<function ActorCriticPolicy.predict_values at 0x7fe9bbfc0200>",
+        "__abstractmethods__": "frozenset()",
+        "_abc_impl": "<_abc_data object at 0x7fe9bbf8f570>"
+    },
+    "verbose": 1,
+    "policy_kwargs": {
+        "net_arch": [
+            128,
+            128
+        ]
+    },
+    "observation_space": {
+        ":type:": "<class 'gym.spaces.box.Box'>",
+        ":serialized:": "gASVDwIAAAAAAACMDmd5bS5zcGFjZXMuYm94lIwDQm94lJOUKYGUfZQojAVkdHlwZZSMBW51bXB5lIwFZHR5cGWUk5SMAmY0lImIh5RSlChLA4wBPJROTk5K/////0r/////SwB0lGKMBl9zaGFwZZRLD4WUjANsb3eUjBVudW1weS5jb3JlLm11bHRpYXJyYXmUjAxfcmVjb25zdHJ1Y3SUk5RoBowHbmRhcnJheZSTlEsAhZRDAWKUh5RSlChLAUsPhZRoC4lDPADAecQAwHnEAMB5xADAecQAwHnEAMB5xADAecQAwHnEAMB5xADAecQAwHnEAMB5xADAecQAwHnEAMB5xJR0lGKMBGhpZ2iUaBNoFUsAhZRoF4eUUpQoSwFLD4WUaAuJQzwAwHlEAMB5RADAeUQAwHlEAMB5RADAeUQAwHlEAMB5RADAeUQAwHlEAMB5RADAeUQAwHlEAMB5RADAeUSUdJRijA1ib3VuZGVkX2JlbG93lGgTaBVLAIWUaBeHlFKUKEsBSw+FlGgIjAJiMZSJiIeUUpQoSwOMAXyUTk5OSv////9K/////0sAdJRiiUMPAQEBAQEBAQEBAQEBAQEBlHSUYowNYm91bmRlZF9hYm92ZZRoE2gVSwCFlGgXh5RSlChLAUsPhZRoK4lDDwEBAQEBAQEBAQEBAQEBAZR0lGKMCl9ucF9yYW5kb22UTnViLg==",
+        "dtype": "float32",
+        "_shape": [
+            15
+        ],
+        "low": "[-999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999. -999.\n -999. -999. -999.]",
+        "high": "[999. 999. 999. 999. 999. 999. 999. 999. 999. 999. 999. 999. 999. 999.\n 999.]",
+        "bounded_below": "[ True  True  True  True  True  True  True  True  True  True  True  True\n  True  True  True]",
+        "bounded_above": "[ True  True  True  True  True  True  True  True  True  True  True  True\n  True  True  True]",
+        "_np_random": null
+    },
+    "action_space": {
+        ":type:": "<class 'gym.spaces.discrete.Discrete'>",
+        ":serialized:": "gASViAAAAAAAAACME2d5bS5zcGFjZXMuZGlzY3JldGWUjAhEaXNjcmV0ZZSTlCmBlH2UKIwBbpRLEYwGX3NoYXBllCmMBWR0eXBllIwFbnVtcHmUjAVkdHlwZZSTlIwCaTiUiYiHlFKUKEsDjAE8lE5OTkr/////Sv////9LAHSUYowKX25wX3JhbmRvbZROdWIu",
+        "n": 17,
+        "_shape": [],
+        "dtype": "int64",
+        "_np_random": null
+    },
+    "n_envs": 1,
+    "num_timesteps": 0,
+    "_total_timesteps": 0,
+    "_num_timesteps_at_start": 0,
+    "seed": null,
+    "action_noise": null,
+    "start_time": null,
+    "learning_rate": 0.0003,
+    "tensorboard_log": "logs/exp_1",
+    "lr_schedule": {
+        ":type:": "<class 'function'>",
+        ":serialized:": "gASV4wIAAAAAAACMF2Nsb3VkcGlja2xlLmNsb3VkcGlja2xllIwOX21ha2VfZnVuY3Rpb26Uk5QoaACMDV9idWlsdGluX3R5cGWUk5SMCENvZGVUeXBllIWUUpQoSwFLAEsBSwFLE0MEiABTAJROhZQpjAFflIWUjFkvb3B0L21pbmljb25kYTMvZW52cy9ybC1lbnYvbGliL3B5dGhvbjMuNy9zaXRlLXBhY2thZ2VzL3N0YWJsZV9iYXNlbGluZXMzL2NvbW1vbi91dGlscy5weZSMBGZ1bmOUS4JDAgABlIwDdmFslIWUKXSUUpR9lCiMC19fcGFja2FnZV9flIwYc3RhYmxlX2Jhc2VsaW5lczMuY29tbW9ulIwIX19uYW1lX1+UjB5zdGFibGVfYmFzZWxpbmVzMy5jb21tb24udXRpbHOUjAhfX2ZpbGVfX5SMWS9vcHQvbWluaWNvbmRhMy9lbnZzL3JsLWVudi9saWIvcHl0aG9uMy43L3NpdGUtcGFja2FnZXMvc3RhYmxlX2Jhc2VsaW5lczMvY29tbW9uL3V0aWxzLnB5lHVOTmgAjBBfbWFrZV9lbXB0eV9jZWxslJOUKVKUhZR0lFKUjBxjbG91ZHBpY2tsZS5jbG91ZHBpY2tsZV9mYXN0lIwSX2Z1bmN0aW9uX3NldHN0YXRllJOUaB99lH2UKGgWaA2MDF9fcXVhbG5hbWVfX5SMGWNvbnN0YW50X2ZuLjxsb2NhbHM+LmZ1bmOUjA9fX2Fubm90YXRpb25zX1+UfZSMDl9fa3dkZWZhdWx0c19flE6MDF9fZGVmYXVsdHNfX5ROjApfX21vZHVsZV9flGgXjAdfX2RvY19flE6MC19fY2xvc3VyZV9flGgAjApfbWFrZV9jZWxslJOURz8zqSowVTJhhZRSlIWUjBdfY2xvdWRwaWNrbGVfc3VibW9kdWxlc5RdlIwLX19nbG9iYWxzX1+UfZR1hpSGUjAu"
+    },
+    "_last_obs": null,
+    "_last_episode_starts": null,
+    "_last_original_obs": null,
+    "_episode_num": 0,
+    "use_sde": false,
+    "sde_sample_freq": -1,
+    "_current_progress_remaining": 1,
+    "ep_info_buffer": null,
+    "ep_success_buffer": null,
+    "_n_updates": 0,
+    "n_steps": 4096,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "ent_coef": 0.0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "batch_size": 1024,
+    "n_epochs": 2,
+    "clip_range": {
+        ":type:": "<class 'function'>",
+        ":serialized:": "gASV4wIAAAAAAACMF2Nsb3VkcGlja2xlLmNsb3VkcGlja2xllIwOX21ha2VfZnVuY3Rpb26Uk5QoaACMDV9idWlsdGluX3R5cGWUk5SMCENvZGVUeXBllIWUUpQoSwFLAEsBSwFLE0MEiABTAJROhZQpjAFflIWUjFkvb3B0L21pbmljb25kYTMvZW52cy9ybC1lbnYvbGliL3B5dGhvbjMuNy9zaXRlLXBhY2thZ2VzL3N0YWJsZV9iYXNlbGluZXMzL2NvbW1vbi91dGlscy5weZSMBGZ1bmOUS4JDAgABlIwDdmFslIWUKXSUUpR9lCiMC19fcGFja2FnZV9flIwYc3RhYmxlX2Jhc2VsaW5lczMuY29tbW9ulIwIX19uYW1lX1+UjB5zdGFibGVfYmFzZWxpbmVzMy5jb21tb24udXRpbHOUjAhfX2ZpbGVfX5SMWS9vcHQvbWluaWNvbmRhMy9lbnZzL3JsLWVudi9saWIvcHl0aG9uMy43L3NpdGUtcGFja2FnZXMvc3RhYmxlX2Jhc2VsaW5lczMvY29tbW9uL3V0aWxzLnB5lHVOTmgAjBBfbWFrZV9lbXB0eV9jZWxslJOUKVKUhZR0lFKUjBxjbG91ZHBpY2tsZS5jbG91ZHBpY2tsZV9mYXN0lIwSX2Z1bmN0aW9uX3NldHN0YXRllJOUaB99lH2UKGgWaA2MDF9fcXVhbG5hbWVfX5SMGWNvbnN0YW50X2ZuLjxsb2NhbHM+LmZ1bmOUjA9fX2Fubm90YXRpb25zX1+UfZSMDl9fa3dkZWZhdWx0c19flE6MDF9fZGVmYXVsdHNfX5ROjApfX21vZHVsZV9flGgXjAdfX2RvY19flE6MC19fY2xvc3VyZV9flGgAjApfbWFrZV9jZWxslJOURz/JmZmZmZmahZRSlIWUjBdfY2xvdWRwaWNrbGVfc3VibW9kdWxlc5RdlIwLX19nbG9iYWxzX1+UfZR1hpSGUjAu"
+    },
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "target_kl": 0.05
+}
